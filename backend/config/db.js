@@ -2,7 +2,7 @@ const { Sequelize } = require('sequelize');
 const config = require('./config.json'); // Ruta al archivo config.json
 
 // Elige el entorno (por defecto es 'development')
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'production';
 const dbConfig = config[env];
 
 // Crear instancia de Sequelize

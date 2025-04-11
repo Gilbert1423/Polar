@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "Bastet2051.,",
-    "database": "PEPE",
-    "host": "127.0.0.1",
+    "username": "gilbert",
+    "password": "gil123$#",
+    "database": "gilbert_db_polar",
+    "host": "mysql-gilbert.alwaysdata.net",
     "dialect": "mysql"
   }
 }

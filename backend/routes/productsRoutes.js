@@ -24,6 +24,7 @@ router.get("/", async (req, res) => {
 
     res.json(products);
   } catch (error) {
+    console.log(error)
     res.status(500).json({ message: "Error al obtener productos", error: error.message });
   }
 });
