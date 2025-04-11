@@ -41,7 +41,7 @@ const CheckoutPage = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/shop/cart?userId=${user.id}`);
+        const response = await fetch(`https://polar-ux66.onrender.com/api/shop/cart?userId=${user.id}`);
         const data = await response.json();
         console.log("Carrito recibido desde el backend:", data);
         setCartItems(data.length === 0 ? [] : data);
@@ -52,7 +52,7 @@ const CheckoutPage = () => {
 
     const fetchAdminPaymentInfo = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/payments/mobile");
+        const response = await fetch("https://polar-ux66.onrender.com/api/payments/mobile");
         if (!response.ok) {
           console.error("Error al obtener la información de pago móvil:", response.statusText);
           return;
@@ -116,7 +116,7 @@ const CheckoutPage = () => {
     console.log("Datos enviados al backend:", orderData);
 
     try {
-      const response = await fetch("http://localhost:5000/api/orders", {
+      const response = await fetch("https://polar-ux66.onrender.com/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderData),
@@ -132,7 +132,7 @@ const CheckoutPage = () => {
         localStorage.removeItem("checkoutCart");
 
         // Eliminar productos en la base de datos
-        await fetch("http://localhost:5000/api/shop/cart", {
+        await fetch("https://polar-ux66.onrender.com/api/shop/cart", {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ userId: user.id }),

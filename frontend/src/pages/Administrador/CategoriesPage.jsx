@@ -34,7 +34,7 @@ const CategoriesPage = () => {
   // Función para traer las categorías reales desde el backend
   const fetchCategories = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/categories", {
+      const response = await fetch("https://polar-ux66.onrender.com/api/categories", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
@@ -68,7 +68,7 @@ activePage === "productos"
   // Función para crear una categoría (POST)
   const addCategory = async (categoryData) => {
     try {
-      const response = await fetch("http://localhost:5000/api/categories", {
+      const response = await fetch("https://polar-ux66.onrender.com/api/categories", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(categoryData),
@@ -89,7 +89,7 @@ activePage === "productos"
   const updateCategory = async (updatedCategory) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/categories/${updatedCategory.id}`,
+        `https://polar-ux66.onrender.com/api/categories/${updatedCategory.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -114,7 +114,7 @@ activePage === "productos"
   // Función para eliminar una categoría (DELETE)
   const deleteCategory = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/categories/${id}`, {
+      const response = await fetch(`https://polar-ux66.onrender.com/api/categories/${id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });

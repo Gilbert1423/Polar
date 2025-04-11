@@ -9,7 +9,7 @@ const CartIcon = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/shop/cart");
+        const response = await fetch("https://polar-ux66.onrender.com/api/shop/cart");
         const data = await response.json();
         setCartItems(data);
       } catch (error) {

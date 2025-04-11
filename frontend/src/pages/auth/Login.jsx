@@ -43,7 +43,7 @@ const Login = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/register", {
+      const response = await fetch("https://polar-ux66.onrender.com/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -77,7 +77,7 @@ const Login = () => {
     const data = { email: loginEmail, password: loginPassword };
   
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch("https://polar-ux66.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

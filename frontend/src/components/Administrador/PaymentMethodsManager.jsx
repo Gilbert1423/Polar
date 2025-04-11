@@ -27,7 +27,7 @@ const PaymentMethodsManager = () => {
   useEffect(() => {
     const fetchPagoMovilConfig = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/payments/mobile");
+        const response = await fetch("https://polar-ux66.onrender.com/api/payments/mobile");
         const data = await response.json();
         setPagoMovilConfig({
           enabled: data.enabled || true,
@@ -46,7 +46,7 @@ const PaymentMethodsManager = () => {
   const savePagoMovilConfig = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/payments/mobile", {
+      const response = await fetch("https://polar-ux66.onrender.com/api/payments/mobile", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -72,7 +72,7 @@ const PaymentMethodsManager = () => {
   const savePaypalConfig = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/payments/paypal", {
+      const response = await fetch("https://polar-ux66.onrender.com/api/payments/paypal", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -33,7 +33,7 @@ export default function Profile() {
 
     async function fetchProfile() {
       try {
-        const res = await fetch("http://localhost:5000/api/profile", {
+        const res = await fetch("https://polar-ux66.onrender.com/api/profile", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export default function Profile() {
             memberSince: data.memberSince || "Desconocido",
             phone: data.phone || "",
             shippingAddress: data.shippingAddress || "",
-            avatar: data.avatar ? `http://localhost:5000${data.avatar}` : "/images/default-avatar.png",
+            avatar: data.avatar ? `https://polar-ux66.onrender.com${data.avatar}` : "/images/default-avatar.png",
           });
         } else {
           setMessage("Error al obtener el perfil.");
@@ -63,7 +63,7 @@ export default function Profile() {
 
     async function fetchOrders() {
       try {
-        const res = await fetch("http://localhost:5000/api/orders/user", {
+        const res = await fetch("https://polar-ux66.onrender.com/api/orders/user", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -127,7 +127,7 @@ export default function Profile() {
         formData.append("avatar", newAvatar); // ✅ Agrega la imagen al FormData
       }
   
-      const res = await fetch("http://localhost:5000/api/profile", {
+      const res = await fetch("https://polar-ux66.onrender.com/api/profile", {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`, // ✅ No incluyas "Content-Type" con FormData

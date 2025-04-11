@@ -17,7 +17,7 @@ const CustomersPage = () => {
   const fetchUsers = async () => {
     console.log("Iniciando fetch de usuarios");
     try {
-      const response = await fetch("http://localhost:5000/api/users", {
+      const response = await fetch("https://polar-ux66.onrender.com/api/users", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
@@ -40,7 +40,7 @@ const CustomersPage = () => {
 
   const updateCustomerStatus = async (id, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/users/${id}`, {
+      const response = await fetch(`https://polar-ux66.onrender.com/api/users/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: newStatus }),

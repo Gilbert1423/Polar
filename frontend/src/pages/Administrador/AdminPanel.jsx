@@ -34,7 +34,7 @@ const AdminPanel = ({ activePage, setActivePage })  => {
   // Función para obtener productos desde el backend
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/products", {
+      const response = await fetch("https://polar-ux66.onrender.com/api/products", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
@@ -57,7 +57,7 @@ const AdminPanel = ({ activePage, setActivePage })  => {
   // Función para obtener categorías reales desde el backend
   const fetchCategories = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/categories", {
+      const response = await fetch("https://polar-ux66.onrender.com/api/categories", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
@@ -96,7 +96,7 @@ const AdminPanel = ({ activePage, setActivePage })  => {
     if (productData.id) {
       // Actualizar producto (PUT)
       try {
-        const response = await fetch(`http://localhost:5000/api/products/${productData.id}`, {
+        const response = await fetch(`https://polar-ux66.onrender.com/api/products/${productData.id}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(productData),
@@ -115,7 +115,7 @@ const AdminPanel = ({ activePage, setActivePage })  => {
     } else {
       // Crear producto (POST)
       try {
-        const response = await fetch("http://localhost:5000/api/products", {
+        const response = await fetch("https://polar-ux66.onrender.com/api/products", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(productData),
@@ -137,7 +137,7 @@ const AdminPanel = ({ activePage, setActivePage })  => {
   // Función para eliminar un producto
   const handleDeleteProduct = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/products/${id}`, {
+      const response = await fetch(`https://polar-ux66.onrender.com/api/products/${id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });

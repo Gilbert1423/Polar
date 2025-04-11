@@ -9,7 +9,7 @@ const Catalogo = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/categories/${nombre}/products`);
+        const response = await fetch(`https://polar-ux66.onrender.com/api/categories/${nombre}/products`);
         const data = await response.json();
 
         if (Array.isArray(data)) {
@@ -44,7 +44,7 @@ const Catalogo = () => {
       console.log("Agregando producto al carrito:", { userId, productId, quantity: 1 });
 
       // Enviar solicitud al backend
-      const response = await fetch("http://localhost:5000/api/shop/cart", {
+      const response = await fetch("https://polar-ux66.onrender.com/api/shop/cart", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId, productId, quantity: 1 }),
@@ -75,7 +75,7 @@ const Catalogo = () => {
               <div className="product-image-container">
                 {product.featured && <div className="product-badge badge-featured">Destacado</div>}
                 <img
-                  src={`http://localhost:5000${product.image}`}
+                  src={`https://polar-ux66.onrender.com${product.image}`}
                   alt={product.name}
                   className="product-image"
                 />

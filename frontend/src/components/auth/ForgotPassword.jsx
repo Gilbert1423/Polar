@@ -8,7 +8,7 @@ const ForgotPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Correo enviado para recuperación:", email);
-    const response = await fetch("http://localhost:5000/api/auth/forgot-password", {
+    const response = await fetch("https://polar-ux66.onrender.com/api/auth/forgot-password", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),

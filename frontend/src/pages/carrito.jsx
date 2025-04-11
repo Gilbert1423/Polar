@@ -18,7 +18,7 @@ export default function ShoppingCart({ onClose }) {
       try {
         if (hasFetched) return; // ✅ Evita múltiples ejecuciones
   
-        const response = await fetch("http://localhost:5000/api/shop/cart");
+        const response = await fetch("https://polar-ux66.onrender.com/api/shop/cart");
         const data = await response.json();
         console.log("Carrito recibido:", data);
   
@@ -42,7 +42,7 @@ export default function ShoppingCart({ onClose }) {
   const removeItem = async (itemId, currentQuantity) => {
     try {
       if (currentQuantity > 1) {
-        const response = await fetch(`http://localhost:5000/api/shop/cart/${itemId}`, {
+        const response = await fetch(`https://polar-ux66.onrender.com/api/shop/cart/${itemId}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ quantity: currentQuantity - 1 }),
@@ -59,7 +59,7 @@ export default function ShoppingCart({ onClose }) {
           console.error("Error al reducir la cantidad:", response.statusText);
         }
       } else {
-        const response = await fetch(`http://localhost:5000/api/shop/cart/${itemId}`, {
+        const response = await fetch(`https://polar-ux66.onrender.com/api/shop/cart/${itemId}`, {
           method: "DELETE",
         });
   

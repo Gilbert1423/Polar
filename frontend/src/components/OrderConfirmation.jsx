@@ -20,7 +20,7 @@ const OrderConfirmation = () => {
    useEffect(() => {
     const completePayment = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/payments/mobile/confirm", {
+        const response = await fetch("https://polar-ux66.onrender.com/api/payments/mobile/confirm", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ userId: orderData.userId }),
@@ -29,7 +29,7 @@ const OrderConfirmation = () => {
         if (response.ok) {
           console.log("Pago confirmado, eliminando carrito...");
   
-          await fetch("http://localhost:5000/api/shop/cart", {
+          await fetch("https://polar-ux66.onrender.com/api/shop/cart", {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ userId: orderData.userId }),

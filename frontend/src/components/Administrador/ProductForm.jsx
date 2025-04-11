@@ -101,8 +101,8 @@ const ProductForm = ({ product, onSave, onCancel, categories = [] }) => {
 
       try {
         const url = product
-          ? `http://localhost:5000/api/products/${product.id}`
-          : "http://localhost:5000/api/products";
+          ? `https://polar-ux66.onrender.com/api/products/${product.id}`
+          : "https://polar-ux66.onrender.com/api/products";
         const method = product ? "PUT" : "POST";
         const response = await fetch(url, { method, body: data });
         const result = await response.json();

@@ -16,7 +16,7 @@ const SearchResults = ({ addToCart }) => {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(`http://localhost:5000/api/products?search=${encodeURIComponent(query)}`);
+        const res = await fetch(`https://polar-ux66.onrender.com/api/products?search=${encodeURIComponent(query)}`);
         if (!res.ok) throw new Error("Error al obtener los productos.");
         
         const data = await res.json();
@@ -36,7 +36,7 @@ const SearchResults = ({ addToCart }) => {
   const handleAddToCart = async (productId) => {
     const userId = 6; // 🛠️ Ajusta según el usuario logueado
     try {
-      const response = await fetch("http://localhost:5000/api/shop/cart", {
+      const response = await fetch("https://polar-ux66.onrender.com/api/shop/cart", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId, productId, quantity: 1 }),
@@ -65,7 +65,7 @@ const SearchResults = ({ addToCart }) => {
                 <div className="product-image-container">
                   {product.featured && <div className="product-badge badge-featured">Destacado</div>}
                   <img
-                    src={`http://localhost:5000${product.image}`}
+                    src={`https://polar-ux66.onrender.com${product.image}`}
                     alt={product.name}
                     className="product-image"
                   />

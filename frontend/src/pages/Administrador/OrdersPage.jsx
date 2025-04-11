@@ -16,7 +16,7 @@ const OrdersPage = () => {
   // Función para obtener los pedidos desde el backend
   const fetchOrders = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/orders", {
+      const response = await fetch("https://polar-ux66.onrender.com/api/orders", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
@@ -59,7 +59,7 @@ const OrdersPage = () => {
   // Función para actualizar el estado de un pedido (conecta a la ruta PUT)
   const updateOrderStatus = async (orderId, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/orders/${orderId}`, {
+      const response = await fetch(`https://polar-ux66.onrender.com/api/orders/${orderId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: newStatus }),

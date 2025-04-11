@@ -68,7 +68,7 @@ const ProductList = ({ products, onEdit, onDelete }) => {
                       <img
                         src={
                           product.image
-                            ? `http://localhost:5000${product.image}`
+                            ? `https://polar-ux66.onrender.com${product.image}`
                             : "/placeholder.svg"
                         }
                         alt={product.name}
