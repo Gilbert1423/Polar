@@ -1,0 +1,241 @@
+/* Estilos para la tabla de productos */
+.product-list-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-table th,
+.product-table td {
+  font-size: 1.2rem;
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.product-table th {
+  background-color: #f7fafc;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.product-table th:hover {
+  background-color: #edf2f7;
+}
+
+.product-table tbody tr:hover {
+  background-color: #f7fafc;
+}
+
+/* Celda de producto con imagen */
+.product-cell {
+  display: flex;
+  align-items: center;
+}
+
+.product-image {
+  width: 170px;
+  height: 90px;
+  /* border-radius: 4px; */
+  object-fit: cover;
+  /* margin-right: 12px; */
+  /* background-color: #f7fafc; */
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.product-description {
+  font-size: 12px;
+  color: #718096;
+}
+
+/* Badges para stock */
+.stock-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.in-stock {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.low-stock {
+  background-color: #fefcbf;
+  color: #744210;
+}
+
+.out-stock {
+  background-color: #fed7d7;
+  color: #822727;
+}
+
+/* Badges para destacados */
+.featured-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.is-featured {
+  background-color: #bee3f8;
+  color: #2a4365;
+}
+
+.not-featured {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+/* Botones de acción */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-button svg,
+.delete-button svg {
+  stroke: #3182ce; /* Azul para el botón de editar */
+}
+
+.delete-button svg {
+  stroke: #e53e3e; /* Rojo para el botón de eliminar */
+}
+
+.edit-button,
+.delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.edit-button {
+  background-color: #ebf8ff;
+  color: #3182ce;
+}
+
+.edit-button:hover {
+  background-color: #bee3f8;
+}
+
+.delete-button {
+  background-color: #fff5f5;
+  color: #e53e3e;
+}
+
+.delete-button:hover {
+  background-color: #fed7d7;
+}
+
+/* Mensaje de no productos */
+.no-products {
+  text-align: center;
+  padding: 32px;
+  color: #718096;
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.pagination-button {
+  background-color: #edf2f7;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #e2e8f0;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-numbers {
+  display: flex;
+  gap: 8px;
+}
+
+.pagination-number {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: none;
+  background-color: #edf2f7;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pagination-number:hover {
+  background-color: #e2e8f0;
+}
+
+.pagination-number.active {
+  background-color: #3182ce;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-table th,
+  .product-table td {
+    padding: 12px 8px;
+  }
+
+  .product-description {
+    display: none;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+

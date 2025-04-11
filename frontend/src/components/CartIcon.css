@@ -1,0 +1,43 @@
+.shop-cart-icon-container {
+    position: relative;
+  }
+  
+  .shop-cart-icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .shop-cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    padding: 0 5px;
+    font-size: 12px;
+  }
+  
+  .shop-cart-slide {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    width: 300px;
+  }
+  
+  .shop-cart-slide.open {
+    animation: slideIn 0.3s ease;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

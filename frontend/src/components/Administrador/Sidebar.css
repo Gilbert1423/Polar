@@ -1,0 +1,140 @@
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: white;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  border-right: 1px solid #e2e8f0;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Encabezado del sidebar */
+.sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+}
+
+.close-sidebar {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #718096;
+  cursor: pointer;
+}
+
+/* Contenido del sidebar */
+.sidebar-content {
+  padding: 20px;
+  font-size: 1rem;
+}
+
+.sidebar-section {
+  margin-bottom: 24px;
+}
+
+.sidebar-section h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #718096;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* Menú del sidebar */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 4px;
+}
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #4a5568;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.sidebar-menu a:hover {
+  background-color: #f7fafc;
+}
+
+.sidebar-menu li.active a {
+  background-color: #ebf8ff;
+  color: #3182ce;
+}
+
+.sidebar-menu svg {
+  margin-right: 12px;
+}
+
+/* Filtro de categorías */
+.category-filter {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-filter li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #4a5568;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.category-filter li:hover {
+  background-color: #f7fafc;
+}
+
+.category-filter li.active {
+  background-color: #ebf8ff;
+  color: #3182ce;
+}
+
+.check-icon {
+  color: #3182ce;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .close-sidebar {
+    display: block;
+  }
+}
+

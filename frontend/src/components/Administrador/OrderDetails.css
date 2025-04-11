@@ -1,0 +1,356 @@
+/* Overlay para los detalles */
+.details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Contenedor de los detalles del pedido */
+.order-details-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Encabezado de los detalles */
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.details-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+}
+
+.close-details {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #718096;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.close-details:hover {
+  color: #4a5568;
+}
+
+/* Contenido de los detalles */
+.details-content {
+  padding: 24px;
+}
+
+/* Sección de información del pedido */
+.order-info-section {
+  margin-bottom: 24px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.order-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 8px 0;
+}
+
+.order-status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-pending {
+  background-color: #fffaf0;
+  color: #ed8936;
+}
+
+.status-processing {
+  background-color: #ebf8ff;
+  color: #4299e1;
+}
+
+.status-shipped {
+  background-color: #e6fffa;
+  color: #38b2ac;
+}
+
+.status-completed {
+  background-color: #f0fff4;
+  color: #48bb78;
+}
+
+.status-cancelled {
+  background-color: #fff5f5;
+  color: #f56565;
+}
+
+.order-date {
+  display: flex;
+  align-items: center;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.order-date svg {
+  margin-right: 6px;
+}
+
+/* Grid para la información del pedido */
+.order-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.order-section {
+  margin-bottom: 24px;
+}
+
+.order-section h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Detalles del cliente y envío */
+.customer-details,
+.shipping-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-item {
+  display: flex;
+  font-size: 0.9rem;
+}
+
+.detail-label {
+  font-weight: 500;
+  color: #718096;
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.detail-value {
+  color: #2d3748;
+}
+
+/* Tabla de productos */
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.items-table th {
+  text-align: left;
+  padding: 10px;
+  background-color: #f7fafc;
+  color: #4a5568;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.items-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Resumen del pedido */
+.order-summary {
+  background-color: #f7fafc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.summary-item.total {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 1rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+/* Sección de acciones del pedido */
+.order-actions-section {
+  background-color: #f7fafc;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.status-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.status-button {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.status-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.status-button.pending {
+  background-color: #fffaf0;
+  color: #ed8936;
+}
+
+.status-button.pending:hover:not(:disabled) {
+  background-color: #feebc8;
+}
+
+.status-button.processing {
+  background-color: #ebf8ff;
+  color: #4299e1;
+}
+
+.status-button.processing:hover:not(:disabled) {
+  background-color: #bee3f8;
+}
+
+.status-button.shipped {
+  background-color: #e6fffa;
+  color: #38b2ac;
+}
+
+.status-button.shipped:hover:not(:disabled) {
+  background-color: #b2f5ea;
+}
+
+.status-button.completed {
+  background-color: #f0fff4;
+  color: #48bb78;
+}
+
+.status-button.completed:hover:not(:disabled) {
+  background-color: #c6f6d5;
+}
+
+.status-button.cancelled {
+  background-color: #fff5f5;
+  color: #f56565;
+}
+
+.status-button.cancelled:hover:not(:disabled) {
+  background-color: #fed7d7;
+}
+
+.status-button.active {
+  font-weight: 600;
+  box-shadow: 0 0 0 2px currentColor;
+}
+
+.additional-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  color: #4a5568;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-button:hover {
+  background-color: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .order-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-buttons {
+    flex-direction: column;
+  }
+
+  .status-button {
+    width: 100%;
+  }
+
+  .additional-actions {
+    flex-direction: column;
+  }
+
+  .action-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
